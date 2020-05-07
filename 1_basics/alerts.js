@@ -8,9 +8,7 @@
 const puppeteer = require('puppeteer');
 
 (async () => {
-  const browser = await puppeteer.launch({
-    headless: false
-  })
+  const browser = await puppeteer.launch()
   const page = await browser.newPage()
   await page.goto('https://www.google.com/')
   page.on('dialog', async dialog => {
@@ -18,9 +16,5 @@ const puppeteer = require('puppeteer');
     await dialog.dismiss()
   })
   await page.evaluate(() => alert('This message is inside an alert box'))
-  // await page.evaluate(() => {
-    debugger;
-    await page.click('a[target=_blank]');
-  // });
   await browser.close()
 })()
