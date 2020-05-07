@@ -9,7 +9,7 @@ try {
   (async () => {
     const browser = await puppeteer.launch()
     const page = await browser.newPage()
-    await page.setViewport({ width: 1280, height: 800 })
+    await page.setViewport({ width: 1980, height: 720 })
     await page.goto('https://www.amazon.com')
     await page.type('#twotabsearchtextbox', 'nyan cat pullover')
     await page.click('input.nav-input')
